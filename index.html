@@ -2,6 +2,37 @@
 <html lang='en-GB'>
 
 <head>
+  <audio id="audiocracker" autoplay="yes" mobile="yes" src="https://drive.google.com/uc?id=1hbZgi1j8OSD5mfU-Vyx4UgeJ2C-7Uu0x" loop>autostart="true"></audio>
+  <script>
+    var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+    if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+    function mischandler() {
+      return false;
+    }
+
+    function mousehandler(e) {
+      var myevent = (isNS) ? e : event;
+      var eventbutton = (isNS) ? myevent.which : myevent.button;
+      if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+  </script>
+  <script type="text/JavaScript">
+    function killCopy(e){
+      return false
+    }
+    function reEnable(){
+      return true
+    }
+    document.onselectstart=new Function ("return false")
+    if (window.sidebar){
+      document.onmousedown=killCopy
+      document.onclick=reEnable
+    }
+  </script>
   <meta name="msvalidate.01" content="C07646BF18142E04476B09D0020DDA52" />
   <meta name="google-site-verification" content="2BEs2Pt7VPj2KUgg8V_Ti4GBvLcg3Sg0b-c1p5g1Wn0" />
   <meta content='width=device-width, initial-scale=1' name='viewport' />
